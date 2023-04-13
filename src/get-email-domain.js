@@ -13,11 +13,9 @@
 let email = 'prettyandsimple@example.com';
 // let email = 'very.unusual.@.unusual.com@usual.com';
 
-function getEmailDomain(email) {
+const getEmailDomain = (email) => {
   let arr = email.split('@');
-  console.log('arr', arr);
   let result = arr[arr.length - 1];
-  console.log('result', result);
   return result;
 };
 

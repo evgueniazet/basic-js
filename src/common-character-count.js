@@ -17,7 +17,7 @@ let x2 = 'sjsjs';
 
 
 
-function getCommonCharacterCount(s1, s2) {
+const getCommonCharacterCount = (s1, s2) => {
   let s1Array = s1.split('');
   let s2Array = s2.split('');
   let sum = 0;
