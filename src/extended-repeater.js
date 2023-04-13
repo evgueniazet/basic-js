@@ -17,56 +17,53 @@ const { NotImplementedError } = require('../extensions/index.js');
  */
 const repeater = (str, options) => {
   throw new NotImplementedError('Not implemented');
-  let resultArr = [];
-  let additionArr = [];
+  // let resultArr = [];
+  // let additionArr = [];
 
-  if (typeof str !== 'string') {
-    String(str);
-  }
-
-  if (!options.separator) {
-    options.separator = '+';
-  }
-
-  // if (!options.additionSeparator) {
-  //   options.additionSeparator = '|';
+  // if (typeof str !== 'string') {
+  //   String(str);
   // }
 
-  if (options.additionRepeatTimes) {
-    for (let i = 0; i < options.additionRepeatTimes; i++) {
-      if (options.addition) {
-        additionArr.push(options.addition);
-      }
-      if (additionArr.length < options.additionRepeatTimes + (options.additionRepeatTimes - 1)) {
-        additionArr.push(options.additionSeparator);
-      }
-    }
-  } else {
-    additionArr.push(options.additionSeparator);
-  }
+  // if (!options.separator) {
+  //   options.separator = '+';
+  // }
 
-  if (options.repeatTimes) {
-    for (let i = 0; i < options.repeatTimes; i++) {
-      resultArr.push(str);
-      // console.log(resultArr.length, options.repeatTimes + (options.repeatTimes + 1));
+  // // if (!options.additionSeparator) {
+  // //   options.additionSeparator = '|';
+  // // }
 
-      if (resultArr.length < options.repeatTimes + (options.repeatTimes + 1)) {
-        additionArr.forEach((item) => {
-          resultArr.push(item)
-        })
-        resultArr.push(options.separator);
-      }
-    }
-  } else {
-    resultArr.push(options.separator);
-  }
-  const newString = resultArr.join('');
-  console.log('newString', newString);
+  // if (options.additionRepeatTimes) {
+  //   for (let i = 0; i < options.additionRepeatTimes; i++) {
+  //     if (options.addition) {
+  //       additionArr.push(options.addition);
+  //     }
+  //     if (additionArr.length < options.additionRepeatTimes + (options.additionRepeatTimes - 1)) {
+  //       additionArr.push(options.additionSeparator);
+  //     }
+  //   }
+  // } else {
+  //   additionArr.push(options.additionSeparator);
+  // }
+
+  // if (options.repeatTimes) {
+  //   for (let i = 0; i < options.repeatTimes; i++) {
+  //     resultArr.push(str);
+  //     // console.log(resultArr.length, options.repeatTimes + (options.repeatTimes + 1));
+
+  //     if (resultArr.length < options.repeatTimes + (options.repeatTimes + 1)) {
+  //       additionArr.forEach((item) => {
+  //         resultArr.push(item)
+  //       })
+  //       resultArr.push(options.separator);
+  //     }
+  //   }
+  // } else {
+  //   resultArr.push(options.separator);
+  // }
+  // const newString = resultArr.join('');
+  // console.log('newString', newString);
 };
 
-repeater('TESTstr', { separator: 'ds', addition: 'ADD!', additionSeparator: ')))000' });
-
-
-// module.exports = {
-//   repeater
-// };
+module.exports = {
+  repeater
+};
