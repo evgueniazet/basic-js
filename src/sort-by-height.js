@@ -14,11 +14,11 @@
 // let myArr = [-1, 150, 150, 170, -1, -1, 160, 180];
 // let myArr = [4, 2, 9, 11, 2, 16];
 
-function sortByHeight(arr) {
+const sortByHeight = (arr) => {
   let globalMin = 0;
 
   arr.forEach((elem, index) => {
-    if (elem !== -1) { // проверка равен ли элемент -1
+    if (elem !== -1) {
       let min = elem;
       let minElemIndex = index;
 
@@ -43,9 +43,7 @@ function sortByHeight(arr) {
 
   return arr;
 };
-// const result = sortByHeight(myArr);
 
-// console.log('result', result);
 
 module.exports = {
   sortByHeight

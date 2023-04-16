@@ -1,4 +1,4 @@
-// const { NotImplementedError } = require('../extensions/index.js');
+const { NotImplementedError } = require('../extensions/index.js');
 
 /**
  * Create name of dream team based on the names of its members
@@ -30,7 +30,7 @@
 //   '  val_plumwood',
 // ]
 
-function createDreamTeam(members) {
+const createDreamTeam = (members) => {
   let nameDreamTeam = '';
 
   if (Array.isArray(members)) {

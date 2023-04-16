@@ -17,7 +17,7 @@
 // let date = () => new Date();
 const fakeDate = {
   toString() {
-      return Date.prototype.toString.call(new Date());
+    return Date.prototype.toString.call(new Date());
   },
   [Symbol.toStringTag]: 'Date'
 };
@@ -42,24 +42,17 @@ Object.setPrototypeOf(fakeDate, Object.getPrototypeOf(new Date()));
 let season = false;
 
 function getSeason(date) {
-  // console.log('date', typeof date);
   if (typeof date === 'undefined') {
     return 'Unable to determine the time of year!';
   } else {
     if (Object.prototype.toString.call(date) === "[object Date]") {
-      console.log('1: ', !(date instanceof Date));
-      console.log('2: ', Number.isNaN(date));
-      console.log('3: ', !!Object.getOwnPropertyNames(date).length);
-      if (!(date instanceof Date) || Number.isNaN(date) || !!Object.getOwnPropertyNames(date).length) { // d.getTime() or d.valueOf() will also work
-        // date object is not valid
-        // return 'Invalid date!';
+
+      if (!(date instanceof Date) || Number.isNaN(date) || !!Object.getOwnPropertyNames(date).length) {
+
         throw new Error('Invalid date!');
       } else {
-        // date object is valid
-        // let dateTime = date.getTime();
-        // console.log('dateTime', dateTime);
+
         let month = date.getMonth();
-        console.log('month', month);
 
         if ((month >= 0 && month <= 1) || month === 11) {
           season = 'winter'
@@ -85,14 +78,6 @@ function getSeason(date) {
   }
 };
 
-// let test = getSeason(fakeDate);
-// console.log('test', test);
-// getSeason('foo')
-// getSeason({ John: 'Smith' }),
-// getSeason(20192701),
-// getSeason([2019, '27', 0 + '1']),
-// getSeason(() => new Date())
-// console.log('test1', getSeason(() => new Date()));
 
 module.exports = {
   getSeason

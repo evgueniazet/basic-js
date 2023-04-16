@@ -12,11 +12,10 @@
  *
  */
 const deleteDigit = (n) => {
-  // throw new NotImplementedError('Not implemented');
   const numbersArr = [];
   const nArr = String(n).split('');
 
-  nArr.forEach((item, index) => {
+  nArr.forEach((_, index) => {
     const copyArr = [...nArr];
     copyArr.splice(index, 1);
     numbersArr.push(copyArr.join(''));
@@ -26,13 +25,6 @@ const deleteDigit = (n) => {
   return Number(result);
 
 };
-
-// deleteDigit(152);
-// deleteDigit(1001);
-// deleteDigit(10);
-// deleteDigit(222219);
-// deleteDigit(109);
-// deleteDigit(342);
 
 module.exports = {
   deleteDigit

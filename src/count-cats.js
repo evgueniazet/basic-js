@@ -17,15 +17,12 @@
 
 // const backyard = [[0, 1, '^^'], [ 2, '^^', 10], [ '^^', 3, 5]];
 
-function countCats(backyard) {
+const countCats = (backyard) => {
   let counter = 0;
   const ears = '^^';
 
-
-  // throw new NotImplementedError('Not implemented');
-  // remove line with error and write your code here
-  for (let i = 0; i < backyard.length; i++) {    
-    for (let j = 0; j < backyard[i].length; j++) {      
+  for (let i = 0; i < backyard.length; i++) {
+    for (let j = 0; j < backyard[i].length; j++) {
       if (backyard[i][j] === ears) {
         counter++
       }
@@ -34,11 +31,6 @@ function countCats(backyard) {
 
   return counter;
 };
-
-// countCats(backyard);
-
-
-
 
 module.exports = {
   countCats
