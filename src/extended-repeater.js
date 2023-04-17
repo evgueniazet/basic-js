@@ -17,12 +17,13 @@
  */
 const repeater = (str, options) => {
   // throw new NotImplementedError('Not implemented');
+
   let resultArr = [];
   let additionArr = [];
 
-  if (typeof str !== 'string') {
-    String(str);
-  }
+  const string = String(str);
+
+  console.log(typeof string);
 
   if (!options.separator) {
     options.separator = '+';
@@ -40,9 +41,11 @@ const repeater = (str, options) => {
     options.additionRepeatTimes = 1;
   }
 
-  if (options.addition) {
+  if ('addition' in options) {
+
+    const addition = String(options.addition);
     for (let i = 0; i < options.additionRepeatTimes; i++) {
-      additionArr.push(options.addition)
+      additionArr.push(addition)
       if (options.additionRepeatTimes > 1 && additionArr.length < options.additionRepeatTimes + (options.additionRepeatTimes - 1)) {
         additionArr.push(options.additionSeparator)
       }
@@ -51,26 +54,20 @@ const repeater = (str, options) => {
 
   if (options.repeatTimes) {
     for (let i = 0; i < options.repeatTimes; i++) {
-      resultArr.push(str);
-      resultArr.push(additionArr.join(''));
-
-      if (options.repeatTimes > 1 && resultArr.length < options.repeatTimes + (options.repeatTimes + 1)) {
-        resultArr.push(options.separator);
+      resultArr.push(string);
+      if (additionArr.length > 0) {
+        resultArr.push(additionArr.join(''));
       }
 
-
-
+      if (options.repeatTimes > 1 && i < options.repeatTimes - 1) {
+        resultArr.push(options.separator);
+      }
     }
   }
 
   console.log('result', resultArr.join(''));
   return resultArr.join('');
 };
-
-// repeater('STRING', { repeatTimes: 3, separator: '**', addition: 'PLUS', additionRepeatTimes: 3, additionSeparator: '00' });
-// repeater('12345', { repeatTimes: 5, separator: '3 words separator' });\
-repeater('la', { repeatTimes: 3, separator: 's', addition: '+', additionRepeatTimes: 1 });
-
 
 module.exports = {
   repeater
